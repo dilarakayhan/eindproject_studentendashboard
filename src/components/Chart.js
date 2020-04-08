@@ -1,5 +1,5 @@
 import React from "react"
-import { VictoryBar, VictoryChart, VictoryLegend, VictoryAxis, VictoryTheme, VictoryGroup, VictorySharedEvents } from 'victory';
+import { VictoryBar, VictoryChart, VictoryLegend, VictoryAxis, VictoryTheme, VictoryGroup } from 'victory';
 
 
 function Chart(props) {
@@ -49,29 +49,30 @@ function Chart(props) {
                 <VictoryAxis
                     orientation="bottom"
                     style={{
-                        tickLabels: { fontSize: 5, angle: 50, padding: 15, fill: "white" },
+                        tickLabels: { fontSize: 5, angle: 50, padding: 10, fill: "white" },
                         grid: { stroke: "white", strokeWidth: 0.1, strokeOpacity: 0.2 }
 
                     }}
                 />
 
                 <VictoryGroup
-                    offset={9}
+                    offset={2}
                     colorScale={["midnightblue", "darkmagenta"]}
                 >
 
                     <VictoryBar
                         name="bar"
-                        data={props.data}
+                        data={props.studentsData}
                         x={"exercise"}
-                        y={"funRating"}
+                        y={"difficultyRating"}
                     />
 
                     <VictoryBar
                         name="bar"
-                        data={props.data}
+                        data={props.studentsData}
                         x={"exercise"}
-                        y={"difficultyRating"}
+                        y={"funRating"}
+
                     />
                 </VictoryGroup>
 
